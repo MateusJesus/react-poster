@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import GandhiSansBold from "./fontes/GandhiSans-Bold.otf"
-import GandhiSansRegular from "./fontes/GandhiSans-Regular.otf"
+import GandhiSansBold from "./fontes/GandhiSans-Bold.otf";
+import GandhiSansRegular from "./fontes/GandhiSans-Regular.otf";
 
 const GlobalStyles = createGlobalStyle`
 
@@ -165,7 +165,6 @@ const GlobalStyles = createGlobalStyle`
   }
   [hidden] {
     display: none;
-  }`
+  }`;
 
-
-export default GlobalStyles
+export default GlobalStyles;
