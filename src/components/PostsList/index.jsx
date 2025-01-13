@@ -1,17 +1,15 @@
-import { useEffect, useState } from "react";
 import Post from "./Post"
 import PostStyle from "./Post.module.css";
 import { useLoaderData } from "react-router-dom";
 
 const PostsList = () => {
-
   const AllPosts = useLoaderData()
-
+    
   return (
     <>
       {AllPosts.length > 0 ?
         <ul className={PostStyle.posts}>
-          {AllPosts?.map((post, index) => <Post postName={post.name} postText={post.text} key={index} />)}
+          {AllPosts?.map((post) => <Post id={post.id} postName={post.name} postText={post.text} key={post.id} />)}
         </ul >
         :
         <div style={{ textAlign: 'center', color: 'white' }}>

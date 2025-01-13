@@ -6,6 +6,7 @@ import RootLayout from './components/routes/RootLayout.jsx'
 import NewPost, { action as newPostAction } from './components/PostsList/NewPost/index.jsx'
 import GlobalStyles from './components/GlobalStyles/index.jsx'
 import styled from 'styled-components'
+import PostDetails, { loader as postDetailsLoader } from './components/PostsList/PostDetails/index.jsx'
 
 const MainStyled = styled.main`
     height: 100%;
@@ -27,7 +28,13 @@ const router = createBrowserRouter([
         path: '/create-post',
         element: <NewPost />,
         action: newPostAction,
-      }]
+      },
+      {
+        path: '/:id',
+        element: <PostDetails />,
+        loader: postDetailsLoader,
+      },
+      ]
     }],
   }
 ])
