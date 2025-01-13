@@ -1,3 +1,5 @@
+import { MdMessage, MdPostAdd } from "react-icons/md"
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 const StyledHeader = styled.header`
@@ -7,8 +9,15 @@ const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: white;
     border-bottom: 2px solid #ece1fa;
-    button {
+    h2{
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    a {
+        text-decoration: none;
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
@@ -21,25 +30,25 @@ const StyledHeader = styled.header`
         cursor: pointer;
         font-weight: bold;
     }
-    button:hover {
+    a:hover {
         background-color: #8c6cf7;
     }
 `
 
-const Header = ({ OpenModalPost }) => {
+const Header = () => {
     return (
         <StyledHeader>
             <div>
                 <h2>
-                    <i>icon</i>
+                    <MdMessage />
                     React Poster
                 </h2>
             </div>
             <div>
-                <button onClick={OpenModalPost}>
-                    <i>icon</i>
+                <Link to={"/create-post"}>
+                    <MdPostAdd size={19}/>
                     New Post
-                </button>
+                </Link>
             </div>
         </StyledHeader>
     )
